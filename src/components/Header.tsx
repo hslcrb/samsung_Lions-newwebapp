@@ -32,9 +32,12 @@ export const Header: React.FC = () => {
         </nav>
 
         <div className="flex items-center gap-4">
-          <button className="px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest border border-zinc-200 hover:bg-zinc-900 hover:text-white transition-all text-zinc-900">
-            LOGIN
-          </button>
+          <Link
+            href="/admin"
+            className="px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest border border-zinc-200 hover:bg-primary hover:text-white hover:border-primary transition-all text-zinc-900"
+          >
+            ADMIN
+          </Link>
           {/* Mobile Menu Icon */}
           <button className="lg:hidden text-zinc-900">
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
