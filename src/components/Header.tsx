@@ -12,9 +12,9 @@ export const Header: React.FC = () => {
           <img
             src="/logo.svg"
             alt="Samsung Lions Logo"
-            className="w-12 h-12 object-contain transition-transform group-hover:scale-110 drop-shadow-md"
+            className="w-16 h-16 object-contain"
           />
-          <span className="font-extrabold text-2xl tracking-tighter text-zinc-900">SAMSUNG LIONS</span>
+          <span className="font-black text-2xl tracking-tighter text-zinc-900 whitespace-nowrap">최강삼성! 라이온즈</span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-10">
