@@ -18,7 +18,7 @@ export const BannerSlider: React.FC = () => {
                         <div className="relative z-10">
                             <h3 className="text-3xl font-black mb-3 leading-tight text-white">{banner.title}</h3>
                             <button className="text-sm font-bold bg-white/20 backdrop-blur-md px-6 py-2 rounded-full hover:bg-white hover:text-black transition-all text-white">
-                                {banner.cta || 'VIEW MORE'}
+                                {banner.cta || '자세히 보기'}
                             </button>
                         </div>
                     </div>
@@ -31,7 +31,7 @@ export const BannerSlider: React.FC = () => {
 export const ChampionsSection: React.FC = () => {
     return (
         <RevealSection>
-            <h2 className="section-title text-center">OUR CHAMPIONSHIP</h2>
+            <h2 className="section-title text-center">우리의 우승 역사</h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                 {LIONS_CMS.champions.map((champ) => (
                     <div key={champ.year} className="flex flex-col items-center p-10 glass rounded-3xl group border-zinc-200 hover:border-primary/40 transition-all shadow-sm">
@@ -53,7 +53,7 @@ export const GoodsSection: React.FC = () => {
             <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
                 <h2 className="section-title mb-0">{LIONS_CMS.goods.sectionTitle}</h2>
                 <button className="group text-sm font-black tracking-widest flex items-center gap-2 hover:text-primary transition-colors text-zinc-900">
-                    GO TO OFFICIAL SHOP
+                    공식 쇼핑몰 바로가기
                     <span className="w-8 h-px bg-zinc-900 group-hover:bg-primary transition-all" />
                 </button>
             </div>
@@ -67,7 +67,7 @@ export const GoodsSection: React.FC = () => {
                                 </span>
                             )}
                             <div className="w-full h-full bg-zinc-100 rounded-2xl flex items-center justify-center font-black text-zinc-200 text-8xl italic uppercase select-none group-hover:scale-110 transition-transform">
-                                GOODS
+                                굿즈
                             </div>
                             <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors pointer-events-none" />
                             <div className="absolute bottom-8 right-8 bg-zinc-900 text-white w-14 h-14 rounded-full flex items-center justify-center translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all hover:scale-110 shadow-lg">

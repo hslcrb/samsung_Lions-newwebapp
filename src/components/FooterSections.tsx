@@ -20,7 +20,7 @@ const GridItem: React.FC<GridItemProps> = ({ type, title, content, color, index 
         >
             <div className="flex justify-between items-start">
                 <span className="text-[10px] font-black tracking-[0.2em] bg-black/10 self-start px-4 py-1.5 rounded-full uppercase text-black/60">
-                    {type} 0{index + 1}
+                    {type === 'SNS' ? 'SNS' : '광고'} 0{index + 1}
                 </span>
                 <span className="text-black/20 group-hover:text-black transition-colors">↗</span>
             </div>
@@ -87,21 +87,21 @@ export const Footer: React.FC = () => {
 
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-12 lg:gap-24">
                         <div className="flex flex-col gap-6">
-                            <span className="font-black text-[10px] opacity-50 tracking-[0.3em] text-primary">RESOURCES</span>
+                            <span className="font-black text-[10px] opacity-50 tracking-[0.3em] text-primary">클럽 유틸</span>
                             {LIONS_CMS.navigation.slice(0, 3).map(link => (
                                 <a key={link.id} href={link.href} className="text-sm font-bold text-zinc-600 hover:text-primary transition-all">{link.label}</a>
                             ))}
                         </div>
                         <div className="flex flex-col gap-6">
-                            <span className="font-black text-[10px] opacity-50 tracking-[0.3em] text-primary">LEGAL</span>
+                            <span className="font-black text-[10px] opacity-50 tracking-[0.3em] text-primary">이용 안내</span>
                             {LIONS_CMS.footer.links.map(link => (
                                 <a key={link.id} href={link.href} className="text-sm font-bold text-zinc-600 hover:text-primary transition-all">{link.label}</a>
                             ))}
                         </div>
                         <div className="flex flex-col gap-6">
-                            <span className="font-black text-[10px] opacity-50 tracking-[0.3em] text-primary">SOCIAL</span>
-                            <a href="#" className="text-sm font-bold text-zinc-600 hover:text-primary transition-all">Instagram</a>
-                            <a href="#" className="text-sm font-bold text-zinc-600 hover:text-primary transition-all">YouTube</a>
+                            <span className="font-black text-[10px] opacity-50 tracking-[0.3em] text-primary">소셜 미디어</span>
+                            <a href="#" className="text-sm font-bold text-zinc-600 hover:text-primary transition-all">인스타그램</a>
+                            <a href="#" className="text-sm font-bold text-zinc-600 hover:text-primary transition-all">유튜브</a>
                         </div>
                     </div>
                 </div>

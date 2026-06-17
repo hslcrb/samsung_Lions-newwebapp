@@ -93,10 +93,17 @@
 }
 
 @layer base {
+
+  *,
+  *::before,
+  *::after {
+    /* 모든 요소에 Presentation 폰트 강제 적용 */
+    font-family: 'Presentation', sans-serif !important;
+  }
+
   body {
     /* 라이트 모드 기본 배경과 텍스트 */
     @apply bg-white text-zinc-900 antialiased overflow-x-hidden;
-    font-family: var(--font-sans);
   }
 
   .container {

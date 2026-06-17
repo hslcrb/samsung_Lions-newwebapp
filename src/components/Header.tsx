@@ -35,7 +35,7 @@ export const Header: React.FC = () => {
             href="/admin"
             className="px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest border border-zinc-200 hover:bg-primary hover:text-white hover:border-primary transition-all text-zinc-900"
           >
-            ADMIN
+            관리자
           </Link>
           {/* Mobile Menu Icon */}
           <button className="lg:hidden text-zinc-900">
