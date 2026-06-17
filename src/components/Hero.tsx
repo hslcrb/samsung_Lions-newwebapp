@@ -7,18 +7,18 @@ import { TouchInterceptor } from './TouchInterceptor';
 
 export const Hero: React.FC = () => {
     return (
-        <section className="relative w-full h-screen overflow-hidden bg-white">
-            {/* YouTube Background Iframe - pointer-events-none으로 기본 조작 차단 */}
-            <div className="absolute inset-0 w-full h-full pointer-events-none select-none">
+        <section className="relative w-full h-screen overflow-hidden bg-white select-none">
+            {/* YouTube Background Iframe - 스케일을 조절하여 외곽 UI를 완전히 가림 */}
+            <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
                 <iframe
                     src={LIONS_CMS.hero.videoUrl}
-                    className="w-full h-full scale-[1.5] aspect-video object-cover"
+                    className="absolute top-1/2 left-1/2 w-[110vw] h-[110vh] -translate-x-1/2 -translate-y-1/2 aspect-video object-cover scale-[1.2]"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    style={{ border: 'none' }}
+                    style={{ border: 'none', pointerEvents: 'none' }}
                 ></iframe>
             </div>
 
-            {/* Component-based Protective Layers */}
+            {/* Component-based Protective Layers - z-index 최상단 배치 */}
             <TouchInterceptor />
             <HeroGradient />
 
