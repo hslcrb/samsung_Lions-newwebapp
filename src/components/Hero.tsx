@@ -34,10 +34,10 @@ export const Hero: React.FC = () => {
                 </button>
             </div>
 
-            {/* Decorative Element */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce">
-                <div className="w-6 h-10 border-2 border-zinc-900/20 rounded-full flex justify-center p-1">
-                    <div className="w-1 h-2 bg-primary/50 rounded-full" />
+            {/* Decorative Element (Scroll Guide) */}
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 transition-opacity duration-500 animate-bounce group-scroll-guide">
+                <div className="w-6 h-10 border-2 border-zinc-900/30 rounded-full flex justify-center p-1">
+                    <div className="w-1 h-2 bg-primary rounded-full" />
                 </div>
             </div>
         </section>

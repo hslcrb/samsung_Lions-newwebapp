@@ -4,7 +4,7 @@ import { Footer } from '@/components/FooterSections';
 
 export default function SubPage() {
     return (
-        <main className="min-h-screen bg-black text-white">
+        <main className="min-h-screen bg-white text-zinc-900">
             <Header />
             <div className="container py-40">
                 <h1 className="section-title">페이지 준비 중입니다</h1>

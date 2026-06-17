@@ -90,7 +90,7 @@ export const LIONS_CMS: SiteConfig = {
         { id: 'shop', label: '쇼핑', href: '/shop' },
     ],
     hero: {
-        videoUrl: 'https://cdn.pixabay.com/video/2016/09/20/5125-183794356_tiny.mp4',
+        videoUrl: 'https://assets.mixkit.co/videos/preview/mixkit-baseball-player-getting-ready-to-hit-the-ball-4965-large.mp4',
         title: 'SAMSUNG LIONS',
         subtitle: '대구의 자부심, 푸른 사자들의 시대',
         cta: '티켓 예매하기',

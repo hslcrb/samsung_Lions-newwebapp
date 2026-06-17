@@ -12,7 +12,7 @@ export default function Home() {
   useReveal();
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="min-h-screen bg-white text-zinc-900">
       <Header />
 
       {/* Hero Section (Video) */}
