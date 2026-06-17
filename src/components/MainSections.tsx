@@ -34,11 +34,19 @@ export const ChampionsSection: React.FC = () => {
             <h2 className="section-title text-center">우리의 우승 역사</h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                 {LIONS_CMS.champions.map((champ) => (
-                    <div key={champ.year} className="flex flex-col items-center p-10 glass rounded-3xl group border-zinc-200 hover:border-primary/40 transition-all shadow-sm">
-                        <span className="text-primary text-5xl font-black mb-4 transition-transform group-hover:scale-110">
-                            {champ.title}
-                        </span>
-                        <div className="w-10 h-1 bg-primary/10 mb-4 group-hover:w-20 transition-all" />
+                    <div key={champ.year} className="flex flex-col items-center p-8 glass rounded-3xl group border-zinc-200 hover:border-primary/40 transition-all shadow-sm">
+                        {champ.emblem ? (
+                            <img
+                                src={champ.emblem}
+                                alt={`${champ.year} 한국시리즈 우승 엠블럼`}
+                                className="w-full max-w-[120px] h-[120px] object-contain mb-4 transition-transform group-hover:scale-110"
+                            />
+                        ) : (
+                            <span className="text-primary text-5xl font-black mb-4 transition-transform group-hover:scale-110">
+                                {champ.title}
+                            </span>
+                        )}
+                        <div className="w-10 h-1 bg-primary/20 mb-3 group-hover:w-20 transition-all" />
                         <span className="text-lg font-black tracking-widest text-zinc-400 group-hover:text-zinc-900">{champ.year}</span>
                     </div>
                 ))}

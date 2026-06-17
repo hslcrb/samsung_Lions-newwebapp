@@ -24,6 +24,7 @@ export interface Champion {
     year: number;
     title: string;
     description?: string;
+    emblem?: string;
 }
 
 export interface GoodsItem {
@@ -101,14 +102,14 @@ export const LIONS_CMS: SiteConfig = {
         { id: 3, title: '라이온즈 파크 투어 안내', image: '/banners/banner3.jpg', color: '#666666', cta: '예약하기' },
     ],
     champions: [
-        { year: 1985, title: 'V1' },
-        { year: 2002, title: 'V2' },
-        { year: 2005, title: 'V3' },
-        { year: 2006, title: 'V4' },
-        { year: 2011, title: 'V5' },
-        { year: 2012, title: 'V6' },
-        { year: 2013, title: 'V7' },
-        { year: 2014, title: 'V8' },
+        { year: 1985, title: 'V1', emblem: '/emblem-of-win/1985.svg' },
+        { year: 2002, title: 'V2', emblem: '/emblem-of-win/2002.svg' },
+        { year: 2005, title: 'V3', emblem: '/emblem-of-win/2005.svg' },
+        { year: 2006, title: 'V4', emblem: '/emblem-of-win/2006.svg' },
+        { year: 2011, title: 'V5', emblem: '/emblem-of-win/2011.svg' },
+        { year: 2012, title: 'V6', emblem: '/emblem-of-win/2012.svg' },
+        { year: 2013, title: 'V7', emblem: '/emblem-of-win/2013.svg' },
+        { year: 2014, title: 'V8', emblem: '/emblem-of-win/2014.svg' },
     ],
     goods: {
         sectionTitle: '라이온즈 굿즈샵',
