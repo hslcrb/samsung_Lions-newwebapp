@@ -1,16 +1,26 @@
 'use client';
 
 import React from 'react';
-import { CanvasVideo } from './ObfuscatedMedia';
 import { LIONS_CMS } from '@/cms/content';
 
 export const Hero: React.FC = () => {
     return (
         <section className="relative w-full h-screen overflow-hidden bg-white">
-            <CanvasVideo src={LIONS_CMS.hero.videoUrl} className="w-full h-full object-cover opacity-80" />
+            {/* YouTube Background Iframe */}
+            <div className="absolute inset-0 w-full h-full pointer-events-none">
+                <iframe
+                    src={LIONS_CMS.hero.videoUrl}
+                    className="w-full h-[100%] scale-[1.5] aspect-video object-cover"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    style={{ border: 'none' }}
+                ></iframe>
+            </div>
+
+            {/* Transparent Touch/Click Interceptor - 유튜브 컨트롤 보호용 */}
+            <div className="absolute inset-0 z-[5] bg-transparent cursor-default" />
 
             {/* Refined Hero Bottom Gradient (Fades into white background) */}
-            <div className="hero-gradient-overlay" />
+            <div className="hero-gradient-overlay z-10" />
 
             {/* Content Overlays */}
             <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
