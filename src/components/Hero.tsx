@@ -2,28 +2,28 @@
 
 import React from 'react';
 import { LIONS_CMS } from '@/cms/content';
+import { HeroGradient } from './HeroGradient';
+import { TouchInterceptor } from './TouchInterceptor';
 
 export const Hero: React.FC = () => {
     return (
         <section className="relative w-full h-screen overflow-hidden bg-white">
-            {/* YouTube Background Iframe */}
-            <div className="absolute inset-0 w-full h-full pointer-events-none">
+            {/* YouTube Background Iframe - pointer-events-none으로 기본 조작 차단 */}
+            <div className="absolute inset-0 w-full h-full pointer-events-none select-none">
                 <iframe
                     src={LIONS_CMS.hero.videoUrl}
-                    className="w-full h-[100%] scale-[1.5] aspect-video object-cover"
+                    className="w-full h-full scale-[1.5] aspect-video object-cover"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     style={{ border: 'none' }}
                 ></iframe>
             </div>
 
-            {/* Transparent Touch/Click Interceptor - 유튜브 컨트롤 보호용 */}
-            <div className="absolute inset-0 z-[5] bg-transparent cursor-default" />
-
-            {/* Refined Hero Bottom Gradient (Fades into white background) */}
-            <div className="hero-gradient-overlay z-10" />
+            {/* Component-based Protective Layers */}
+            <TouchInterceptor />
+            <HeroGradient />
 
             {/* Content Overlays */}
-            <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
+            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
                 <h1
                     className="text-6xl md:text-8xl lg:text-9xl font-black italic tracking-tighter mb-6 opacity-0 animate-fade-in-up text-zinc-900"
                     style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.8)' }}
@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Decorative Element (Scroll Guide) */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 transition-opacity duration-500 animate-bounce group-scroll-guide">
+            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 transition-opacity duration-500 animate-bounce group-scroll-guide">
                 <div className="w-6 h-10 border-2 border-zinc-900/30 rounded-full flex justify-center p-1">
                     <div className="w-1 h-2 bg-primary rounded-full" />
                 </div>
