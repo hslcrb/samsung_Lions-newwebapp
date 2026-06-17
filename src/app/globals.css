@@ -36,6 +36,10 @@
     @apply bg-white text-zinc-900 antialiased overflow-x-hidden;
     font-family: var(--font-sans);
   }
+
+  .container {
+    @apply mx-auto px-6 max-w-[1440px] w-full;
+  }
 }
 
 @layer components {
