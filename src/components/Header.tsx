@@ -9,12 +9,11 @@ export const Header: React.FC = () => {
     <header className="fixed top-0 left-0 w-full z-50 glass h-20 transition-all duration-300">
       <div className="max-w-7xl mx-auto h-full px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <div
-            className="w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl border-2 border-white transition-transform group-hover:rotate-12 shadow-lg"
-            style={{ backgroundColor: LIONS_CMS.theme.primary, color: 'white' }}
-          >
-            SL
-          </div>
+          <img
+            src="/logo.svg"
+            alt="Samsung Lions Logo"
+            className="w-12 h-12 object-contain transition-transform group-hover:scale-110 drop-shadow-md"
+          />
           <span className="font-extrabold text-2xl tracking-tighter text-zinc-900">SAMSUNG LIONS</span>
         </Link>
 
