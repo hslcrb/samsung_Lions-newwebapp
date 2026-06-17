@@ -78,8 +78,8 @@ export const LIONS_CMS: SiteConfig = {
         primary: '#074CA1',
         secondary: '#00357A',
         accent: '#FFD700',
-        background: '#000000',
-        surface: '#111111',
+        background: '#FFFFFF',
+        surface: '#F5F5F5',
     },
     navigation: [
         { id: 'team', label: '구단', href: '/club' },

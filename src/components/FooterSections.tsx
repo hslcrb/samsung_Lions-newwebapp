@@ -15,18 +15,18 @@ interface GridItemProps {
 const GridItem: React.FC<GridItemProps> = ({ type, title, content, color, index }) => {
     return (
         <div
-            className="p-10 rounded-[3rem] flex flex-col justify-between h-[350px] transition-all hover:scale-[0.98] group cursor-pointer"
+            className="p-10 rounded-[3rem] flex flex-col justify-between h-[350px] transition-all hover:scale-[0.98] group cursor-pointer shadow-sm"
             style={{ backgroundColor: color }}
         >
             <div className="flex justify-between items-start">
-                <span className="text-[10px] font-black tracking-[0.2em] bg-black/20 self-start px-4 py-1.5 rounded-full uppercase">
+                <span className="text-[10px] font-black tracking-[0.2em] bg-black/10 self-start px-4 py-1.5 rounded-full uppercase text-black/60">
                     {type} 0{index + 1}
                 </span>
-                <span className="text-white/30 group-hover:text-white transition-colors">↗</span>
+                <span className="text-black/20 group-hover:text-black transition-colors">↗</span>
             </div>
             <div>
-                <h4 className="text-sm font-bold opacity-60 mb-2">{title}</h4>
-                <h3 className="text-2xl md:text-3xl font-black leading-tight tracking-tighter">{content}</h3>
+                <h4 className="text-sm font-bold opacity-40 mb-2 text-black">{title}</h4>
+                <h3 className="text-2xl md:text-3xl font-black leading-tight tracking-tighter text-black">{content}</h3>
             </div>
         </div>
     );
@@ -54,11 +54,11 @@ export const SocialAdGrid: React.FC = () => {
 export const SocialLogosSection: React.FC = () => {
     return (
         <RevealSection className="py-20">
-            <div className="flex flex-wrap justify-center gap-16 lg:gap-24 grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
+            <div className="flex flex-wrap justify-center gap-16 lg:gap-24 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700">
                 {LIONS_CMS.socialLogos.map((logo) => (
                     <a key={logo.name} href={logo.url} className="flex flex-col items-center gap-4 group">
                         <span className="text-5xl transition-transform group-hover:scale-125 duration-500">{logo.icon}</span>
-                        <span className="text-[11px] font-black tracking-[0.3em] uppercase">{logo.name}</span>
+                        <span className="text-[11px] font-black tracking-[0.3em] uppercase text-zinc-900">{logo.name}</span>
                     </a>
                 ))}
             </div>
@@ -68,17 +68,17 @@ export const SocialLogosSection: React.FC = () => {
 
 export const Footer: React.FC = () => {
     return (
-        <footer className="py-24 mt-20 border-t border-white/5 bg-gradient-to-b from-black to-zinc-950">
-            <div className="container px-6">
+        <footer className="py-24 mt-20 border-t border-zinc-100 bg-zinc-50">
+            <div className="container px-6 text-zinc-900">
                 <div className="flex flex-col lg:flex-row justify-between items-start gap-16 lg:gap-32">
                     <div className="max-w-md">
-                        <h2 className="text-4xl font-black mb-8 tracking-tighter italic">SAMSUNG LIONS</h2>
-                        <p className="text-sm opacity-40 leading-relaxed font-light mb-8">
+                        <h2 className="text-4xl font-black mb-8 tracking-tighter italic text-primary">SAMSUNG LIONS</h2>
+                        <p className="text-sm opacity-60 leading-relaxed font-bold mb-8">
                             {LIONS_CMS.footer.address}
                         </p>
                         <div className="flex gap-4">
                             {LIONS_CMS.socialLogos.slice(0, 3).map(logo => (
-                                <div key={logo.name} className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all cursor-pointer">
+                                <div key={logo.name} className="w-10 h-10 rounded-full border border-zinc-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all cursor-pointer bg-white shadow-sm">
                                     <span className="text-sm">{logo.icon}</span>
                                 </div>
                             ))}
@@ -87,34 +87,33 @@ export const Footer: React.FC = () => {
 
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-12 lg:gap-24">
                         <div className="flex flex-col gap-6">
-                            <span className="font-black text-[10px] opacity-20 tracking-[0.3em]">RESOURCES</span>
+                            <span className="font-black text-[10px] opacity-30 tracking-[0.3em]">RESOURCES</span>
                             {LIONS_CMS.navigation.slice(0, 3).map(link => (
                                 <a key={link.id} href={link.href} className="text-sm font-bold opacity-60 hover:opacity-100 hover:text-primary transition-all">{link.label}</a>
                             ))}
                         </div>
                         <div className="flex flex-col gap-6">
-                            <span className="font-black text-[10px] opacity-20 tracking-[0.3em]">LEGAL</span>
+                            <span className="font-black text-[10px] opacity-30 tracking-[0.3em]">LEGAL</span>
                             {LIONS_CMS.footer.links.map(link => (
                                 <a key={link.id} href={link.href} className="text-sm font-bold opacity-60 hover:opacity-100 hover:text-primary transition-all">{link.label}</a>
                             ))}
                         </div>
                         <div className="flex flex-col gap-6">
-                            <span className="font-black text-[10px] opacity-20 tracking-[0.3em]">SOCIAL</span>
+                            <span className="font-black text-[10px] opacity-30 tracking-[0.3em]">SOCIAL</span>
                             <a href="#" className="text-sm font-bold opacity-60 hover:opacity-100 hover:text-primary transition-all">Instagram</a>
                             <a href="#" className="text-sm font-bold opacity-60 hover:opacity-100 hover:text-primary transition-all">YouTube</a>
                         </div>
                     </div>
                 </div>
 
-                <div className="mt-24 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <span className="text-[10px] font-black opacity-20 uppercase tracking-[0.4em]">
+                <div className="mt-24 pt-10 border-t border-zinc-200 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <span className="text-[10px] font-black opacity-30 uppercase tracking-widest text-zinc-900">
                         {LIONS_CMS.footer.copyright}
                     </span>
-                    <div className="flex items-center gap-2 grayscale opacity-30 h-6">
-                        {/* Placeholder for small tech badges */}
-                        <div className="px-2 py-1 border border-white text-[8px] font-black">NEXT.JS</div>
-                        <div className="px-2 py-1 border border-white text-[8px] font-black">TYPESCRIPT</div>
-                        <div className="px-2 py-1 border border-white text-[8px] font-black">TAILWIND</div>
+                    <div className="flex items-center gap-2 grayscale opacity-50 h-6">
+                        <div className="px-2 py-1 border border-zinc-900 text-[8px] font-black">NEXT.JS</div>
+                        <div className="px-2 py-1 border border-zinc-900 text-[8px] font-black">TYPESCRIPT</div>
+                        <div className="px-2 py-1 border border-zinc-900 text-[8px] font-black">TAILWIND</div>
                     </div>
                 </div>
             </div>
