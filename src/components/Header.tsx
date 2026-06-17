@@ -6,7 +6,7 @@ import { SITE_CONTENT, THEME } from '@/cms/content';
 
 export const Header: React.FC = () => {
     return (
-        <header className="fixed top-0 left-0 w-full z-[100] transition-all duration-300 glass" style={{ height: 'var(--nav-height)' }}>
+        <header className="fixed top-0 left-0 w-full z-100 transition-all duration-300 glass" style={{ height: 'var(--nav-height)' }}>
             <div className="max-w-7xl mx-auto h-full px-6 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2">
                     <div
@@ -18,7 +18,7 @@ export const Header: React.FC = () => {
                     <span className="font-extrabold text-2xl tracking-tighter text-white">SAMSUNG LIONS</span>
                 </Link>
 
-                <nav className="hidden lg:flex items-center gap-8">
+                <nav className="nav-links items-center gap-8">
                     {SITE_CONTENT.header.nav.map((item) => (
                         <Link
                             key={item.id}
@@ -42,6 +42,14 @@ export const Header: React.FC = () => {
           display: flex;
           align-items: center;
           justify-content: center;
+        }
+        .nav-links {
+          display: none;
+        }
+        @media (min-width: 1024px) {
+          .nav-links {
+            display: flex;
+          }
         }
         nav a {
           position: relative;

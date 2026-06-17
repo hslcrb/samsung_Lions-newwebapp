@@ -11,7 +11,7 @@ export const BannerSlider: React.FC = () => {
                 {SITE_CONTENT.banners.map((banner) => (
                     <div
                         key={banner.id}
-                        className="flex-shrink-0 w-[300px] md:w-[600px] h-[300px] rounded-2xl p-8 flex flex-col justify-end transition-transform hover:scale-[1.02]"
+                        className="flex-shrink-0 w-[300px] md-w-600 h-[300px] rounded-2xl p-8 flex flex-col justify-end transition-all hover:scale-105"
                         style={{
                             backgroundColor: banner.color,
                             scrollSnapAlign: 'start',
@@ -24,9 +24,10 @@ export const BannerSlider: React.FC = () => {
                 ))}
             </div>
             <style jsx>{`
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      `}</style>
+                .hide-scrollbar::-webkit-scrollbar { display: none; }
+                .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+                @media (min-width: 768px) { .md-w-\[600px\] { width: 600px; } }
+            `}</style>
         </RevealSection>
     );
 };
@@ -35,20 +36,14 @@ export const ChampionsSection: React.FC = () => {
     return (
         <RevealSection>
             <h2 className="section-title text-center">OUR CHAMPIONSHIP</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md-grid-cols-4 gap-8">
                 {SITE_CONTENT.champions.map((champ) => (
-                    <div key={champ.year} className="flex flex-col items-center p-6 glass rounded-xl border-accent/20">
-                        <span className="text-accent text-4xl font-black mb-2">{champ.title}</span>
+                    <div key={champ.year} className="flex flex-col items-center p-6 glass rounded-xl" style={{ borderColor: `${THEME.accent}33` }}>
+                        <span className="text-4xl font-black mb-2" style={{ color: THEME.accent }}>{champ.title}</span>
                         <span className="text-sm font-bold opacity-60">{champ.year}</span>
                     </div>
                 ))}
             </div>
-            <style jsx>{`
-        .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
-        .md\\:grid-cols-4 { @media (min-width: 768px) { grid-template-columns: repeat(4, 1fr); } }
-        .border-accent\\/20 { border-color: ${THEME.accent}33; }
-        .text-accent { color: ${THEME.accent}; }
-      `}</style>
         </RevealSection>
     );
 };
@@ -60,7 +55,7 @@ export const GoodsSection: React.FC = () => {
                 <h2 className="section-title mb-0">{SITE_CONTENT.goods.title}</h2>
                 <button className="text-sm font-bold border-b border-white pb-1">GO TO SHOP</button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md-grid-cols-3 gap-8">
                 {SITE_CONTENT.goods.items.map((item) => (
                     <div key={item.id} className="group cursor-pointer">
                         <div className="aspect-square bg-surface rounded-3xl mb-4 overflow-hidden relative">
@@ -75,12 +70,8 @@ export const GoodsSection: React.FC = () => {
                 ))}
             </div>
             <style jsx>{`
-        .aspect-square { aspect-ratio: 1 / 1; }
-        .bg-surface { background-color: ${THEME.surface}; }
-        .group:hover .group-hover\\:bg-primary\\/40 { background-color: ${THEME.primary}66; }
-        .grid-cols-1 { grid-template-columns: 1fr; }
-        .md\\:grid-cols-3 { @media (min-width: 768px) { grid-template-columns: repeat(3, 1fr); } }
-      `}</style>
+                .group:hover .group-hover-bg-primary-40 { background-color: ${THEME.primary}66; }
+            `}</style>
         </RevealSection>
     );
 };
