@@ -14,15 +14,15 @@
 
 ## Tasks
 
-- [ ] 1. Record baseline and design; verify remote write route.
-- [ ] 2. Add verified content modules and optimized, attributed assets.
-- [ ] 3. Implement local typography, semantic shell, mobile navigation and footer.
-- [ ] 4. Rebuild the home hero and editorial sections in small commits.
-- [ ] 5. Implement match calendar and source-labelled schedule.
-- [ ] 6. Implement players, history, club, fan and shop routes with useful interactions.
-- [ ] 7. Remove obsolete mock components and update metadata/admin/docs.
-- [ ] 8. Run production build, lint, type checking, desktop/mobile/no-JS checks and focused interaction tests.
-- [ ] 9. Independent review; correct material findings, capture final screens, open/update PR and verify remote head.
+- [x] 1. Record baseline and design; verify remote write route.
+- [x] 2. Add verified content modules and optimized, attributed assets.
+- [x] 3. Implement local typography, semantic shell, mobile navigation and footer.
+- [x] 4. Rebuild the home hero and editorial sections in small commits.
+- [x] 5. Implement match calendar and source-labelled schedule.
+- [x] 6. Implement players, history, club, fan and shop routes with useful interactions.
+- [x] 7. Remove obsolete mock components and update metadata/admin/docs.
+- [x] 8. Run production build, lint, type checking, desktop/mobile/no-JS checks and focused interaction tests.
+- [x] 9. Independent review; correct material findings, capture final screens, open/update PR and verify remote head.
 
 ## Review focus
 
