@@ -20,7 +20,8 @@ export function PlayerExplorer() {
   const normalizedQuery = query.trim().replace(/^#/, "").replace(/\s/g, "").toLowerCase();
   const visiblePlayers = PLAYERS.filter((player) => {
     const matchesPosition = position === "all" || position === player.category;
-    const searchText = `${player.name}${player.englishName}${player.number}`.replace(/\s/g, "").toLowerCase();
+    const displayedNumber = String(player.number).padStart(2, "0");
+    const searchText = `${player.name}${player.englishName}${displayedNumber}`.replace(/\s/g, "").toLowerCase();
     return matchesPosition && searchText.includes(normalizedQuery);
   });
 
