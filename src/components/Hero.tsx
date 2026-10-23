@@ -1,56 +1,84 @@
-'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Icon } from '@/components/Icon';
+import { OFFICIAL } from '@/data/lions';
 
-import React from 'react';
-import { LIONS_CMS } from '@/cms/content';
-import { HeroGradient } from './HeroGradient';
-import { TouchInterceptor } from './TouchInterceptor';
+export function Hero() {
+  return (
+    <>
+      <section className="home-hero" aria-labelledby="home-title">
+        <div className="hero-photo">
+          <Image
+            src="/images/lions/hero-stadium.webp"
+            alt="관중석 앞에서 하이파이브하며 기쁨을 나누는 삼성 라이온즈 선수들"
+            fill
+            sizes="(max-width: 700px) 100vw, 75vw"
+            preload
+          />
+        </div>
+        <div className="hero-shade" aria-hidden="true" />
 
-export const Hero: React.FC = () => {
-    return (
-        <section className="relative w-full h-screen overflow-hidden bg-white select-none">
-            {/* YouTube Background Iframe - 스케일을 조절하여 외곽 UI를 완전히 가림 */}
-            <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
-                <iframe
-                    src={LIONS_CMS.hero.videoUrl}
-                    className="absolute top-1/2 left-1/2 w-[110vw] h-[110vh] -translate-x-1/2 -translate-y-1/2 aspect-video object-cover scale-[1.2]"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    style={{ border: 'none', pointerEvents: 'none' }}
-                ></iframe>
-            </div>
+        <div className="wrap hero-inner">
+          <div className="hero-kicker">
+            <span className="hero-dot" aria-hidden="true" />
+            SAMSUNG LIONS · EST. 1982
+          </div>
 
-            {/* Component-based Protective Layers - z-index 최상단 배치 */}
-            <TouchInterceptor />
-            <HeroGradient />
+          <h1 id="home-title" className="hero-title" lang="en">
+            <span>BLUE IS</span>
+            <span>
+              OUR HOME<span className="hero-period">.</span>
+            </span>
+          </h1>
 
-            {/* Content Overlays */}
-            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
-                <h1
-                    className="text-6xl md:text-8xl lg:text-9xl font-black italic tracking-tighter mb-6 opacity-0 animate-fade-in-up text-zinc-900"
-                    style={{ textShadow: '0 0 20px rgba(255, 255, 255, 0.8)' }}
+          <div className="hero-bottom">
+            <div>
+              <h2>우리의 봄, 여름, 가을은 파랗다.</h2>
+              <p>같은 이름을 부르는 우리. 오늘도, 최강삼성.</p>
+              <div className="hero-actions">
+                <Link href="/matches" className="button button-white">
+                  우리의 다음 경기
+                  <Icon name="arrow" />
+                </Link>
+                <a
+                  href={OFFICIAL.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-video"
+                  aria-label="라이온즈TV (새 창)"
                 >
-                    {LIONS_CMS.hero.title}
-                </h1>
-                <p className="text-lg md:text-2xl font-black tracking-[0.2em] mb-10 opacity-0 animate-fade-in-up [animation-delay:200ms] text-primary">
-                    {LIONS_CMS.hero.subtitle}
-                </p>
-                <button
-                    className="group relative px-12 py-5 bg-primary text-white font-black text-lg overflow-hidden transition-all hover:pr-16 shadow-xl"
-                >
-                    <span className="relative z-10">{LIONS_CMS.hero.cta}</span>
-                    <span className="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 transition-all group-hover:opacity-100 group-hover:right-8">
-                        →
-                    </span>
-                    <div className="absolute inset-0 bg-secondary translate-x-[-100%] transition-transform group-hover:translate-x-0 -z-10" />
-                </button>
+                  <span><Icon name="play" /></span>
+                  라이온즈TV
+                </a>
+              </div>
             </div>
 
-            {/* Decorative Element (Scroll Guide) - 잠시 주석 처리하여 UI 오해 소지 제거
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 transition-opacity duration-500 animate-bounce group-scroll-guide">
-                <div className="w-6 h-10 border-2 border-zinc-900/30 rounded-full flex justify-center p-1">
-                    <div className="w-1 h-2 bg-primary rounded-full" />
-                </div>
+            <div className="hero-stamp">
+              <span>2026 SEASON</span>
+              <strong>WIN<br />OR WOW.</strong>
+              <span>대구, 우리의 홈.</span>
             </div>
-            */}
-        </section>
-    );
-};
+          </div>
+
+          <div className="hero-scroll">
+            <span>SCROLL TO THE BLUE</span>
+            <Icon name="down" />
+          </div>
+        </div>
+      </section>
+
+      <div className="blue-ribbon" aria-label="삼성 라이온즈, 대구, 1982년부터">
+        <div>
+          <span>PRIDE OF DAEGU</span>
+          <span aria-hidden="true">✦</span>
+          <span>WE ARE LIONS</span>
+          <span aria-hidden="true">✦</span>
+          <span>BLUE BLOOD, ONE LOVE</span>
+          <span aria-hidden="true">✦</span>
+          <span>SINCE 1982</span>
+          <span aria-hidden="true">✦</span>
+        </div>
+      </div>
+    </>
+  );
+}
